@@ -1,0 +1,85 @@
+<div class="form_wrapper">
+    <div class="form_container">
+        <div class="title_container">
+            <h2>Registration Form</h2>
+        </div>
+        <div class="">
+            <div class="">
+                <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group row">
+                        <div class="col_half ">
+                            <label class="sr-only" for="inlineFormInputGroupFirstName">FirstName</label>
+                            <div *ngIf="submitted && f.firstName.errors.required"  class="invalid-feedback" >
+                                Please enter a valid firstName
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fas fa-user"></i></div>
+                                </div>
+                                <input type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"  id="inlineFormInputGroupfirstName"
+                                    placeholder="FirstName">
+                            </div>
+                        </div>
+                        <div class="col_half ">
+                            <label class="sr-only" for="inlineFormInputGroupLastName">LastName</label>
+                            <div *ngIf="submitted && f.lastName.errors.required"  class="invalid-feedback">
+                                Please enter a valid lastName
+                            </div>
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="fas fa-user"></i></div>
+                                </div>
+                                <input type="text" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"  id="inlineFormInputGroupLastName"
+                                    placeholder="LastName">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="sr-only" for="inlineFormInputGroupUsername">Email</label>
+                        <div *ngIf="submitted && f.email.errors.required"  class="invalid-feedback">
+                            Please enter a valid email address.
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i aria-hidden="true" class="fa fa-envelope"></i></div>
+                            </div>
+                            <input type="text" class="form-control" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"  id="inlineFormInputGroupEmail"
+                                placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="sr-only" for="inlineFormInputGroupUsername">Username</label>
+                        <div *ngIf="submitted && f.email.errors.required"  class="invalid-feedback">
+                            Please enter a valid username.
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fas fa-user-circle"></i></div>
+                            </div>
+                            <input type="text" class="form-control" formControlName="text" [ngClass]="{ 'is-invalid': submitted && f.username.errors }"  id="inlineFormInputGroupUsername"
+                                placeholder="Username">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="sr-only" for="inlineFormInputGroupPassword">Password</label>
+                        <div *ngIf="submitted && f.email.errors.required"  class="invalid-feedback">
+                            Please enter a valid password.
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i aria-hidden="true" class="fa fa-lock"></i></div>
+                            </div>
+                            <input type="text" class="form-control" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"  id="inlineFormInputGroupPassword"
+                                placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="input_field checkbox_option">
+                        <input formControlName="acceptTerms" type="checkbox" id="cb1">
+                        <label for="cb1">I agree with terms and conditions</label>
+                    </div>
+                    <button class="m-auto btn btn-secondary col-md-6 btn-lg btn-block">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
